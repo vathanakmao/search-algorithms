@@ -6,10 +6,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.vathanakmao.search.DFS;
+import com.vathanakmao.search.BFS;
 import com.vathanakmao.search.Graph;
 
-public class DfsTest {
+public class BfsTest {
 
 	public static void main(String[] args) {
 		
@@ -23,18 +23,18 @@ public class DfsTest {
 		vertices.add("F");
 		vertices.add("G");
 		vertices.add("H");
-
+		
 		// Edges
 		Map<String, List<String>> edges = new HashMap<String, List<String>>();
 		edges.put("A", Arrays.asList("B", "C", "D"));
-
+		
 		edges.put("B", Arrays.asList("A", "E", "F"));
 		edges.put("E", Arrays.asList("B"));
 		edges.put("F", Arrays.asList("B"));
-
+		
 		edges.put("C", Arrays.asList("A", "G"));
 		edges.put("G", Arrays.asList("C"));
-
+		
 		edges.put("D", Arrays.asList("A", "H"));
 		edges.put("H", Arrays.asList("D"));
 		
@@ -43,8 +43,8 @@ public class DfsTest {
 		
 		String init = "A";
 		String goal = "H";
-		DFS dfs = new DFS(graph);
-		List<String> paths = dfs.search(init, goal);
+		BFS algorith = new BFS(graph);
+		List<String> paths = algorith.search(init, goal);
 		System.out.println(paths);
 	}
 	
